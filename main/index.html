@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>@storybook/cli - Storybook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    
+    <link
+      rel="prefetch"
+      href="./sb-common-assets/nunito-sans-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="prefetch"
+      href="./sb-common-assets/nunito-sans-bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="./sb-common-assets/fonts.css" />
+
+    <link href="./sb-manager/runtime.js" rel="modulepreload" />
+
+    
+    <link href="./sb-addons/essentials-controls-0/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-actions-1/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-backgrounds-2/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-viewport-3/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-toolbars-4/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-measure-5/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-outline-6/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/storybook-7/manager-bundle.js" rel="modulepreload" />
+      <style>
+  @font-face {
+    font-family: '72';
+    font-style: normal;
+    font-weight: 400;
+    src: local('72'),
+      url(https://sdk.openui5.org/resources/sap/ui/core/themes/sap_fiori_3/fonts/72-Regular.woff2?ui5-webcomponents)
+        format('woff2');
+  }
+
+  @font-face {
+    font-family: '72full';
+    font-style: normal;
+    font-weight: 400;
+    src: local('72-full'),
+      url(https://sdk.openui5.org/resources/sap/ui/core/themes/sap_fiori_3/fonts/72-Regular-full.woff2?ui5-webcomponents)
+        format('woff2');
+  }
+
+  @font-face {
+    font-family: '72';
+    font-style: normal;
+    font-weight: 700;
+    src: local('72-Bold'),
+      url(https://sdk.openui5.org/resources/sap/ui/core/themes/sap_fiori_3/fonts/72-Bold.woff2?ui5-webcomponents)
+        format('woff2');
+  }
+
+  @font-face {
+    font-family: '72full';
+    font-style: normal;
+    font-weight: 700;
+    src: local('72-Bold-full'),
+      url(https://sdk.openui5.org/resources/sap/ui/core/themes/sap_fiori_3/fonts/72-Bold-full.woff2?ui5-webcomponents)
+        format('woff2');
+  }
+
+  @font-face {
+    font-family: '72-Bold';
+    font-style: normal;
+    src: local('72-Bold'),
+      url(https://sdk.openui5.org/resources/sap/ui/core/themes/sap_fiori_3/fonts/72-Bold.woff2?ui5-webcomponents)
+        format('woff2');
+  }
+
+  @font-face {
+    font-family: '72-Boldfull';
+    font-style: normal;
+    src: url(https://sdk.openui5.org/resources/sap/ui/core/themes/sap_fiori_3/fonts/72-Bold-full.woff2?ui5-webcomponents)
+      format('woff2');
+  }
+
+  @font-face {
+    font-family: '72-Light';
+    font-style: normal;
+    src: local('72-Light'),
+      url(https://sdk.openui5.org/resources/sap/ui/core/themes/sap_fiori_3/fonts/72-Light.woff2?ui5-webcomponents)
+        format('woff2');
+  }
+
+  @font-face {
+    font-family: '72-Lightfull';
+    font-style: normal;
+    src: url(https://sdk.openui5.org/resources/sap/ui/core/themes/sap_fiori_3/fonts/72-Light-full.woff2?ui5-webcomponents)
+      format('woff2');
+  }
+
+  @font-face {
+    font-family: '72Black';
+    font-style: bold;
+    font-weight: 900;
+    src: local('72Black'),
+      url(https://sdk.openui5.org/resources/sap/ui/core/themes/sap_horizon/fonts/72-Black.woff2?ui5-webcomponents)
+        format('woff2');
+  }
+
+  body {
+    font-family: '72', Arial, Helvetica, sans-serif;
+  }
+  #storybook-explorer-searchfield {
+    background: transparent !important;
+  }
+
+  .docblock-argstable-body label[title] {
+    background: #fff !important;
+  }
+
+  input:checked ~ span:first-of-type:not(:only-of-type),
+  input:not(:checked) ~ span:last-of-type:not(:only-of-type) {
+    background-color: rgba(0, 0, 0, 0.15) !important;
+  }
+  input:checked ~ span:last-of-type,
+  input:not(:checked) ~ span:first-of-type {
+    background-color: transparent !important;
+  }
+</style>
+
+<script data-ui5-config type="application/json">
+  {
+    "theme": "sap_fiori_3"
+  }
+</script>
+<link rel="icon" href="favicon.ico" />
+
+<!--<script src="/custom-elements-es5-adapter.js"></script>-->
+ 
+
+    <style>
+      #storybook-root[hidden] {
+        display: none !important;
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    <div id="root"></div>
+
+    
+    <script>
+      
+        
+          window['FEATURES'] = {
+  "warnOnLegacyHierarchySeparator": true,
+  "buildStoriesJson": false,
+  "storyStoreV7": true,
+  "argTypeTargetsV7": true,
+  "legacyDecoratorFileOrder": false
+};
+        
+      
+        
+          window['REFS'] = {};
+        
+      
+        
+          window['LOGLEVEL'] = "info";
+        
+      
+        
+          window['DOCS_OPTIONS'] = {
+  "defaultName": "Docs",
+  "autodocs": true
+};
+        
+      
+        
+          window['CONFIG_TYPE'] = "PRODUCTION";
+        
+      
+        
+      
+        
+      
+        
+      
+    </script>
+    
+
+    <script type="module">
+      import './sb-manager/runtime.js';
+
+      
+      import './sb-addons/essentials-controls-0/manager-bundle.js';
+      
+      import './sb-addons/essentials-actions-1/manager-bundle.js';
+      
+      import './sb-addons/essentials-backgrounds-2/manager-bundle.js';
+      
+      import './sb-addons/essentials-viewport-3/manager-bundle.js';
+      
+      import './sb-addons/essentials-toolbars-4/manager-bundle.js';
+      
+      import './sb-addons/essentials-measure-5/manager-bundle.js';
+      
+      import './sb-addons/essentials-outline-6/manager-bundle.js';
+      
+      import './sb-addons/storybook-7/manager-bundle.js';
+      
+    </script>
+
+    <link href="./sb-preview/runtime.js" rel="prefetch" as="script" />
+  </body>
+</html>
