@@ -16,7 +16,8 @@
       "yes": true,
       "preid": "rc",
       "preDistTag": "next",
-      "message": "chore(release): publish %s [ci skip]"
+      "message": "chore(release): publish %s [ci skip]",
+      "registry": "https://fioneer.jfrog.io/artifactory/api/npm/fioneer-npm-virtual/"
     }
   }
 }
