@@ -8,9 +8,6 @@
       "path": "./packages/main"
     },
     {
-      "path": "./packages/charts"
-    },
-    {
       "path": "./packages/cypress-commands"
     }
   ],

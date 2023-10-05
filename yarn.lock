@@ -2804,7 +2804,7 @@ __metadata:
   peerDependencies:
     "@types/react": "*"
     "@types/react-dom": "*"
-    "@ui5/webcomponents": ^1.16.0-rc.2
+    "@ui5/webcomponents": ~1.15.1
     "@ui5/webcomponents-base": ~1.15.1
     "@ui5/webcomponents-fiori": ~1.15.1
     "@ui5/webcomponents-icons": ~1.15.1

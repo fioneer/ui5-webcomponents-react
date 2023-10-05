@@ -181,12 +181,18 @@ export const VirtualTableBody = (props: VirtualTableBodyProps) => {
         ) {
           updatedHeight += subComponentsHeight?.[virtualRow.index]?.subComponentHeight ?? 0;
         }
-        return (
+
+        // MODIFICATION: allow for a custom row wrapper rendering
+        const rowPropsWithoutWrapper = { ...rowProps };
+        delete rowPropsWithoutWrapper.rowWrapper;
+        delete rowPropsWithoutWrapper.rowWrapperProps;
+
+        const renderedRow = (
           // eslint-disable-next-line react/jsx-key
           <div
-            {...rowProps}
+            {...rowPropsWithoutWrapper}
             style={{
-              ...(rowProps.style ?? {}),
+              ...(rowPropsWithoutWrapper.style ?? {}),
               transform: `translateY(${virtualRow.start}px)`,
               position: 'absolute',
               boxSizing: 'border-box',
@@ -195,7 +201,7 @@ export const VirtualTableBody = (props: VirtualTableBodyProps) => {
             ref={(node) => {
               virtualRow.measureElement(node);
             }}
-            aria-rowindex={rowProps['aria-rowindex'] + 1}
+            aria-rowindex={rowPropsWithoutWrapper['aria-rowindex'] + 1}
           >
             {RowSubComponent && (row.isExpanded || alwaysShowSubComponent) && (
               <SubComponent
@@ -279,6 +285,19 @@ export const VirtualTableBody = (props: VirtualTableBodyProps) => {
             })}
           </div>
         );
+
+        // MODIFICATION: allow for a custom row wrapper rendering
+        if (rowProps.rowWrapper) {
+          const additionalRowProps = rowProps.rowWrapperProps || {};
+          return (
+            // eslint-disable-next-line react/jsx-key
+            <rowProps.rowWrapper {...rowProps} {...additionalRowProps} height={`${updatedHeight}px`}>
+              {renderedRow}
+            </rowProps.rowWrapper>
+          );
+        }
+
+        return renderedRow;
       })}
     </div>
   );
