@@ -7,6 +7,7 @@ This is a fork of @ui5/webcomponents-react meant for internal use at Fioneer.
   - The colour is set to `sapList_HeaderBackground`, which is not used in the story book. 
   - Section headers should also not have a padding in the leftmost cell. It is therefore checked if the row has the property `isSectionHeader`.
 - **Subcomponents in an AnalyticalTable do not reserve space**. Therefore, showing subcomponents results in needing to scroll if there are not many rows. To prevent this, a prop for the `<AnalyticalTable>` has been added: `tableHeight`. It sets a fixed height of the table in pixels.
+- **Enabling a custom row wrapper for AnalyticalTable rows**. It was not possible to render a custom wrapper around a row to therefore have more control over the row itself (e.g. a custom drag and drop handler. This has been added.
 
 All modifications are commented with `MODIFICATION` in the code to facilitate updating this repository when it is synced with the original @ui5/webcomponents-react repository.
 
